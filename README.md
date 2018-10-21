@@ -10,3 +10,7 @@ cat Hybrid.txt|tr -c "a-zA-Z" " " |tr "A-Z" "a-z"|tr " " "\n" >Hybrid.txt
 tr -s '[:blank:]' '\n' <Hybrid.txt| fgrep -vwf stopwords.txt
 
 cat Hybrid.txt|tr -c '[:alpha:]' '[\n*]' | sort | uniq -c | sort -n -r>Hybrid.txt
+
+Search engine: Find word and frequency of word in a text file
+  find ./ -type f -name "Hybrid.txt" -exec grep -l  "workforce"  {} \; -print | wc -l
+
